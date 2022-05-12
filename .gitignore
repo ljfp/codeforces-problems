@@ -1,0 +1,9 @@
+# VSCode
+.vscode/
+*.code-workspace
+
+# Binaries
+*.o
+
+# I/O files
+*.txt
