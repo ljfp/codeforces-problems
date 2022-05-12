@@ -1,11 +1,5 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-
-int counter_example()
-{
-    return 0;
-}
 
 string solve()
 {
@@ -40,6 +34,11 @@ string solve()
 
 int main()
 {
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    #endif
+    
     int tests, i=0;
     cin >> tests;
     string results[tests];
