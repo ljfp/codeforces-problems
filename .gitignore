@@ -4,6 +4,3 @@
 
 # Binaries
 *.o
-
-# I/O files
-*.txt
