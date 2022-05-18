@@ -24,6 +24,7 @@ typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
 typedef pair<string, string> pss;
 typedef map<int, int> mii;
+typedef map<ll, ll> mll;
 typedef unordered_map<int, int> umap_ii;
 typedef unordered_map<string, int> umap_si;
 
