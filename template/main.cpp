@@ -13,6 +13,7 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 
+typedef vector<string> vs;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef vector<ll> vl;
