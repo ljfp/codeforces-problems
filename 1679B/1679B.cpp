@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define FOR(i, j, k, in) for (int i = j; i < k; i += in)
-#define RFOR(i, j, k, in) for (int i = j; i > k; i -= in)
+#define FOR(i, j, k, in) for (ll i = j; i < k; i += in)
+#define RFOR(i, j, k, in) for (ll i = j; i > k; i -= in)
 #define REP(i, j) FOR(i, 0, j, 1)
 #define RREP(i, j) RFOR(i, j, 0, 1)
 
@@ -40,15 +40,6 @@ typedef unordered_map<string, int> umap_si;
  * |5.| INT_MIN    | Minimum value int               |-2,147,483,648 (10^10)
 */
 
-void solve1(vl& arr, int i, ll x)
-{
-    arr.at(i - 1) = x;
-}
-
-void solve2(vl& arr, int x)
-{
-    arr.assign(arr.size(), x);
-}
 
 int main()
 {
@@ -56,7 +47,7 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ios_base::sync_with_stdio(true);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
     ll n = 0, a = 0, q = 0;
@@ -68,21 +59,46 @@ int main()
         cin >> a;
         arr.at(i) = a;
     }
-
-    RREP(j, q)
+    
+    ll arr_sum = 0;
+    for (ll& elem : arr)
     {
-        char t; int i; ll x;
+        arr_sum += elem;
+    }
+
+    vector<pll> fq(n);
+    for (ll i = 0; i<n; i++)
+    {
+        fq[i] = {0, arr.at(i)};
+    }
+    pll sq = {0, 0};
+
+    for (ll j = 1; j <= q; j++)
+    {
+        char t; ll i; ll x;
         cin >> t;
         if (t == '1')
         {
             cin >> i >> x;
-            solve1(arr, i, x);
+            i -= 1;
+            if (sq.first > fq[i].first)
+            {
+                arr.at(i) = sq.second;
+            }
+            else
+            {
+                arr.at(i) = fq[i].second;
+            }
+            arr_sum -= arr.at(i);
+            fq[i] = {j, x};
+            arr_sum += fq[i].second;
         }
         else
         {
             cin >> x;
-            solve2(arr, x);
+            sq = {j, x};
+            arr_sum = n * x;
         }
-        cout << accumulate(arr.begin(), arr.end(), 0) << '\n';
+        cout << arr_sum << '\n';
     }
 }
