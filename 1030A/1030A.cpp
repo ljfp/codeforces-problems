@@ -40,30 +40,30 @@ typedef unordered_map<string, int> umap_si;
 
 string solve(int n)
 {
-    int c = 0;
-    FOR(i, 0, n, 1)
-    {
-        cin >> c;
-        if (c == 1)
-        {
-            return "HARD";
-        }
-    }
-    return "EASY";
+	int c = 0;
+	FOR(i, 0, n, 1)
+	{
+		cin >> c;
+		if (c == 1)
+		{
+			return "HARD";
+		}
+	}
+	return "EASY";
 }
 
 int main()
 {
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
 #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
 
-    int n = 0;
-    cin >> n;
-    string difficulty = solve(n);
+	int n = 0;
+	cin >> n;
+	string difficulty = solve(n);
 
-    cout << difficulty;
+	cout << difficulty;
 }

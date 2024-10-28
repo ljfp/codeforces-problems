@@ -42,27 +42,27 @@ typedef map<ll, ll> mll;
 int main()
 {
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
 #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 
-    ll n, k = 0;
-    string s;
-    cin >> n >> k >> s;
-    if (k == n)
-    {
-        return 0;
-    }
+	ll n, k = 0;
+	string s;
+	cin >> n >> k >> s;
+	if (k == n)
+	{
+		return 0;
+	}
 
-    
-    REP(i, k)
-    {
-        REP(j, s.length())
-        {
-            cout << s[j];
-        }
-    }
-    return 0;
+
+	REP(i, k)
+	{
+		REP(j, s.length())
+		{
+			cout << s[j];
+		}
+	}
+	return 0;
 }

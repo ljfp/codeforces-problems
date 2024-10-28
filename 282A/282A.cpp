@@ -40,45 +40,45 @@ typedef unordered_map<string, int> umap_si;
 
 void solve(ll test_case, int *x)
 {
-    char operation;
-    string statement;
+	char operation;
+	string statement;
 
-    cin >> statement;
-    operation = statement[1];
+	cin >> statement;
+	operation = statement[1];
 
-    switch (operation)
-    {
-    case '+':
-        *x += 1;
-        break;
-    
-    case '-':
-        *x -= 1;
-        break;
-    
-    default:
-        break;
-    }
+	switch (operation)
+	{
+	case '+':
+		*x += 1;
+		break;
+
+	case '-':
+		*x -= 1;
+		break;
+
+	default:
+		break;
+	}
 }
 
 int main()
 {
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
 #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 
-    ll t, t1 = 0;
-    cin >> t;
-    int x = 0;
+	ll t, t1 = 0;
+	cin >> t;
+	int x = 0;
 
-    while (t1 < t)
-    {
-        solve(t1 + 1, &x);
-        t1++;
-    }
+	while (t1 < t)
+	{
+		solve(t1 + 1, &x);
+		t1++;
+	}
 
-    cout << x;
+	cout << x;
 }

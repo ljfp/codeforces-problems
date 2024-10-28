@@ -44,61 +44,61 @@ typedef unordered_map<string, int> umap_si;
 int main()
 {
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
 #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 
-    ll n = 0, a = 0, q = 0;
-    cin >> n >> q;
+	ll n = 0, a = 0, q = 0;
+	cin >> n >> q;
 
-    vl arr(n);
-    REP(i, n)
-    {
-        cin >> a;
-        arr.at(i) = a;
-    }
-    
-    ll arr_sum = 0;
-    for (ll& elem : arr)
-    {
-        arr_sum += elem;
-    }
+	vl arr(n);
+	REP(i, n)
+	{
+		cin >> a;
+		arr.at(i) = a;
+	}
 
-    vector<pll> fq(n);
-    for (ll i = 0; i<n; i++)
-    {
-        fq[i] = {0, arr.at(i)};
-    }
-    pll sq = {0, 0};
+	ll arr_sum = 0;
+	for (ll& elem : arr)
+	{
+		arr_sum += elem;
+	}
 
-    for (ll j = 1; j <= q; j++)
-    {
-        char t; ll i; ll x;
-        cin >> t;
-        if (t == '1')
-        {
-            cin >> i >> x;
-            i -= 1;
-            if (sq.first > fq[i].first)
-            {
-                arr.at(i) = sq.second;
-            }
-            else
-            {
-                arr.at(i) = fq[i].second;
-            }
-            arr_sum -= arr.at(i);
-            fq[i] = {j, x};
-            arr_sum += fq[i].second;
-        }
-        else
-        {
-            cin >> x;
-            sq = {j, x};
-            arr_sum = n * x;
-        }
-        cout << arr_sum << '\n';
-    }
+	vector<pll> fq(n);
+	for (ll i = 0; i<n; i++)
+	{
+		fq[i] = {0, arr.at(i)};
+	}
+	pll sq = {0, 0};
+
+	for (ll j = 1; j <= q; j++)
+	{
+		char t; ll i; ll x;
+		cin >> t;
+		if (t == '1')
+		{
+			cin >> i >> x;
+			i -= 1;
+			if (sq.first > fq[i].first)
+			{
+				arr.at(i) = sq.second;
+			}
+			else
+			{
+				arr.at(i) = fq[i].second;
+			}
+			arr_sum -= arr.at(i);
+			fq[i] = {j, x};
+			arr_sum += fq[i].second;
+		}
+		else
+		{
+			cin >> x;
+			sq = {j, x};
+			arr_sum = n * x;
+		}
+		cout << arr_sum << '\n';
+	}
 }

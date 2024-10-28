@@ -40,32 +40,32 @@ typedef unordered_map<string, int> umap_si;
 
 string string_to_lower(string* s)
 {
-    for_each(s->begin(), s->end(), [](char &c){c = towlower(c);});
-    return *s;
+	for_each(s->begin(), s->end(), [](char &c){c = towlower(c);});
+	return *s;
 }
 
 int main()
 {
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
 #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 
-    string s1, s2 = "";
-    cin >> s1 >> s2;
-    
-    if (string_to_lower(&s1) < string_to_lower(&s2))
-    {
-        cout << "-1";
-    }
-    else if (string_to_lower(&s1) > string_to_lower(&s2))
-    {
-        cout << "1";
-    }
-    else
-    {
-        cout << "0";
-    }
+	string s1, s2 = "";
+	cin >> s1 >> s2;
+
+	if (string_to_lower(&s1) < string_to_lower(&s2))
+	{
+		cout << "-1";
+	}
+	else if (string_to_lower(&s1) > string_to_lower(&s2))
+	{
+		cout << "1";
+	}
+	else
+	{
+		cout << "0";
+	}
 }

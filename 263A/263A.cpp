@@ -41,15 +41,15 @@ typedef unordered_map<string, int> umap_si;
 
 int solve(int arr[2])
 {
-    return abs(2-arr[0]) + abs(2-arr[1]); 
-} 
+	return abs(2-arr[0]) + abs(2-arr[1]);
+}
 
 void print5by5matrix(int arr[5][5])
 {
 	for(int i=0;i<5;++i){
 		for(int j=0;j<5;++j){
 			cout<<arr[i][j]<<' ';
-		}	
+		}
 		cout<<endl;
 	}
 }
@@ -57,26 +57,26 @@ void print5by5matrix(int arr[5][5])
 int main()
 {
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
 #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 
-    int onelocation[2] = {0, 0};
+	int onelocation[2] = {0, 0};
 
-    for (int i=0; i<5; i++)
-    {
-        for (int j=0; j<5; j++)
-        {   
-            auto x = 0;
-            cin >> x;
-            if (x == 1)
-            {
-                onelocation[0] = i;
-                onelocation[1] = j;
-            }
-        }
-    }
-    cout << solve(onelocation);
+	for (int i=0; i<5; i++)
+	{
+		for (int j=0; j<5; j++)
+		{
+			auto x = 0;
+			cin >> x;
+			if (x == 1)
+			{
+				onelocation[0] = i;
+				onelocation[1] = j;
+			}
+		}
+	}
+	cout << solve(onelocation);
 }

@@ -42,70 +42,70 @@ typedef unordered_map<char, int> umap_ci;
 
 int solve(int students, int questions, vs answers, vi scores)
 {
-    string const possible_answers = "ABCDE";
-    vi max_for_q;
-    REP(i, questions)
-    {
-        umap_ci answer_freq = 
-        {
-            {'A', 0},
-            {'B', 0},
-            {'C', 0},
-            {'D', 0},
-            {'E', 0}
-        };
+	string const possible_answers = "ABCDE";
+	vi max_for_q;
+	REP(i, questions)
+	{
+		umap_ci answer_freq =
+		{
+			{'A', 0},
+			{'B', 0},
+			{'C', 0},
+			{'D', 0},
+			{'E', 0}
+		};
 
-        REP(j, students)
-        {
-            char c = answers.at(j)[i];
-            answer_freq[c] += 1;
-        }
+		REP(j, students)
+		{
+			char c = answers.at(j)[i];
+			answer_freq[c] += 1;
+		}
 
-        int max = 0;
-        for(auto& letter : possible_answers)
-        {
-            max = (answer_freq[letter] > max) ? answer_freq[letter] : max;
-        }
+		int max = 0;
+		for(auto& letter : possible_answers)
+		{
+			max = (answer_freq[letter] > max) ? answer_freq[letter] : max;
+		}
 
-        max_for_q.push_back(max);
-    }
+		max_for_q.push_back(max);
+	}
 
-    int result = 0;
-    REP(i, scores.size())
-    {
-        result += (scores.at(i) * max_for_q.at(i));
-    }
+	int result = 0;
+	REP(i, scores.size())
+	{
+		result += (scores.at(i) * max_for_q.at(i));
+	}
 
-    return result;
+	return result;
 }
 
 int main()
 {
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
 #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 
-    int s, q;
-    vs answers;
-    vi scores;
-    cin >> s >> q;
-    REP(i, s)
-    {
-        string aux = " ";
-        cin >> aux;
-        answers.push_back(aux);
-    }
+	int s, q;
+	vs answers;
+	vi scores;
+	cin >> s >> q;
+	REP(i, s)
+	{
+		string aux = " ";
+		cin >> aux;
+		answers.push_back(aux);
+	}
 
-    REP(i, q)
-    {
-        int aux = 0;
-        cin >> aux;
-        scores.push_back(aux);
-    }
+	REP(i, q)
+	{
+		int aux = 0;
+		cin >> aux;
+		scores.push_back(aux);
+	}
 
-    int result = solve(s, q, answers, scores);
-    cout << result;
+	int result = solve(s, q, answers, scores);
+	cout << result;
 }

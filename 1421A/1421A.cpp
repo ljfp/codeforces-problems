@@ -4,42 +4,42 @@ using namespace std;
 
 int solve()
 {
-    int a, b, x;
-    cin >> a >> b;
+	int a, b, x;
+	cin >> a >> b;
 
-    // The number that minimizes (a XOR x) + (b XOR x)
-    // will be the result of (a AND b) because the
-    // minimal value will be attained when two 1s
-    // are found in the same place in the base2 representations of
-    // a and b (1 XOR 1 is 0).
+	// The number that minimizes (a XOR x) + (b XOR x)
+	// will be the result of (a AND b) because the
+	// minimal value will be attained when two 1s
+	// are found in the same place in the base2 representations of
+	// a and b (1 XOR 1 is 0).
 
-    x = a & b;
-    return (a ^ x) + (b ^ x);
+	x = a & b;
+	return (a ^ x) + (b ^ x);
 }
 
 int main()
-{   
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-    #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-    int tests, i=0;
-    cin >> tests;
-    vector<int> results(tests);
+{
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+	#endif
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 
-    while (tests--)
-    {
-        results[i] = solve();
-        i++;
-    }
+	int tests, i=0;
+	cin >> tests;
+	vector<int> results(tests);
 
-    for (int& e: results)
-    {
-        cout << e << endl;
-    }
+	while (tests--)
+	{
+		results[i] = solve();
+		i++;
+	}
 
-    return 0;
+	for (int& e: results)
+	{
+		cout << e << endl;
+	}
+
+	return 0;
 }

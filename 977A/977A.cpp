@@ -40,36 +40,36 @@ typedef unordered_map<string, int> umap_si;
 
 ll solve(ll n, int o)
 {
-    RREP(i, (o-1))
-    {
-        int last_digit = n % 10;
-        if (last_digit != 0)
-        {
-            n -= 1;
-        }
-        else
-        {
-            n /= 10;
-        }
-    }
+	RREP(i, (o-1))
+	{
+		int last_digit = n % 10;
+		if (last_digit != 0)
+		{
+			n -= 1;
+		}
+		else
+		{
+			n /= 10;
+		}
+	}
 
-    return n;
+	return n;
 }
 
 int main()
 {
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
 #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 
-    // 'number' is any integer between 2 and 10^9
-    // 'subtractions' is any integer between 1 and 50
-    ll number = 0; int subtractions = 0;
-    cin >> number >> subtractions;
+	// 'number' is any integer between 2 and 10^9
+	// 'subtractions' is any integer between 1 and 50
+	ll number = 0; int subtractions = 0;
+	cin >> number >> subtractions;
 
-    int result = solve(number, subtractions);
-    cout << result << '\n';
+	int result = solve(number, subtractions);
+	cout << result << '\n';
 }

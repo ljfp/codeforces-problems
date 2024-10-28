@@ -42,24 +42,24 @@ typedef unordered_map<string, int> umap_si;
 
 void solve(ll test_case)
 {
-    // Do your thing here :)
-    cout << test_case << "\n";
+	// Do your thing here :)
+	cout << test_case << "\n";
 }
 
 int main()
 {
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
 #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 
-    ll t, t1 = 0;
-    cin >> t;
-    while (t1 < t)
-    {
-        solve(t1 + 1);
-        t1++;
-    }
+	ll t, t1 = 0;
+	cin >> t;
+	while (t1 < t)
+	{
+		solve(t1 + 1);
+		t1++;
+	}
 }
