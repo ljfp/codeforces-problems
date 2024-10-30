@@ -7,17 +7,19 @@ using namespace std;
 #define RREP(i, j) RFOR(i, j, 0, 1)
 #define PI 3.1415926535897932384626433832795
 
+typedef short int si;
+typedef long double ld;
+typedef long long ll;
+typedef unsigned long long ull;
+
 const int MAX_N = 1e5 + 5;
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 const ld EPS = 1e-9;
 
-typedef long double ld;
-typedef long long ll;
-typedef unsigned long long ull;
-
 typedef vector<string> vs;
 typedef vector<int> vi;
+typedef vector<short int> vsi;
 typedef vector<vi> vvi;
 typedef vector<ll> vl;
 typedef vector<vl> vvl;
